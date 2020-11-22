@@ -26,12 +26,12 @@ public class MainActivity2 extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
         SingerAdapter adapter = new SingerAdapter();
-//        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);
         adapter.addItem(new SingerItem("소녀시대", "010-1000-1000"));
-//        adapter.addItem(new SingerItem("아이즈원", "010-1000-1000"));
-//        adapter.addItem(new SingerItem("소녀시대", "010-1000-1000"));
-//        adapter.addItem(new SingerItem("소녀시대", "010-1000-1000"));
-//        adapter.addItem(new SingerItem("소녀시대", "010-1000-1000"));
+        adapter.addItem(new SingerItem("아이즈원", "010-1022-1123"));
+        adapter.addItem(new SingerItem("소녀시대", "010-1004-1121"));
+        adapter.addItem(new SingerItem("소녀시대", "010-1020-1142"));
+        adapter.addItem(new SingerItem("소녀시대", "010-1013-1022"));
         adapter.notifyDataSetChanged();
 
     }
@@ -39,7 +39,6 @@ public class MainActivity2 extends AppCompatActivity {
     class SingerAdapter extends BaseAdapter{
 
         ArrayList<SingerItem> items = new ArrayList<SingerItem>();
-
 
         @Override
         public int getCount() {

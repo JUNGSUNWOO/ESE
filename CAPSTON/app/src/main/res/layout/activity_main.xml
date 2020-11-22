@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextClock
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:format12Hour="HH:mm:ss"
+        android:gravity = "center"
+        android:textSize="75dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="운동 시간"
+        android:textSize="20dp" />
+
+    <GridLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:layout_margin="10dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="2">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity = "center"
+            android:textSize="20dp"
+            android:text="최고 속도" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity = "center"
+            android:textSize="20dp"
+            android:text="평균 속도" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity = "center"
+            android:textSize="20dp"
+            android:text="최저 속도" />
+        <TextView
+            android:id="@+id/speed_1"
+            android:layout_width="100dp"
+            android:gravity = "center"
+            android:textSize="20dp"
+            android:text="test"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/speed_2"
+            android:layout_width="100dp"
+            android:gravity = "center"
+            android:textSize="20dp"
+            android:text="test"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/speed_3"
+            android:layout_width="100dp"
+            android:textSize="20dp"
+            android:gravity = "center"
+            android:text="test"
+            android:layout_height="match_parent" />
+
+    </GridLayout>
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.MapFragment"/>
+
+</LinearLayout>

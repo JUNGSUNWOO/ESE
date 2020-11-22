@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 public class SingeritemView extends LinearLayout {
     TextView textView;
@@ -17,7 +19,6 @@ public class SingeritemView extends LinearLayout {
 
     public SingeritemView(Context context) {
         super(context);
-
         init(context);
     }
 
@@ -33,7 +34,7 @@ public class SingeritemView extends LinearLayout {
         textView.setText(name);
     }
     public void setMobile(String name){
-        textView.setText(name);
+        textView2.setText(name);
     }
 
     public SingeritemView(Context context, @Nullable AttributeSet attrs) {
@@ -44,6 +45,7 @@ public class SingeritemView extends LinearLayout {
         super(context, attrs, defStyleAttr);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public SingeritemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }

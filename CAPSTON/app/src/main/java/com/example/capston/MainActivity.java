@@ -1,13 +1,15 @@
-package com.example.myapplication;
-
-import android.app.FragmentManager;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+package com.example.capston;
+//구글맵 키제한 AIzaSyB3EQtRgVN1hH3TWxFPptBfi0ekC-n53TE
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.FragmentManager;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.widget.TextClock;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,28 +18,18 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-    //구글맵 키제한 AIzaSyB3EQtRgVN1hH3TWxFPptBfi0ekC-n53TE
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-public class map_page_7 extends AppCompatActivity implements OnMapReadyCallback {
-    private Button btn_start;
-    private Button btn_end;
     private FragmentManager fragmentManager;
     private MapFragment mapFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.map_page_7);
+        setContentView(R.layout.activity_main);
         fragmentManager = getFragmentManager();
         mapFragment = (MapFragment) fragmentManager.findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        btn_end = (Button)findViewById(R.id.btn_end);
-        btn_end.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(map_page_7.this, page_8.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     @Override
@@ -59,4 +51,3 @@ public class map_page_7 extends AppCompatActivity implements OnMapReadyCallback 
 
 
 }
-

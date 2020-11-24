@@ -14,7 +14,17 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         Button button;
+        Button button3;
+        button3 = (Button)findViewById(R.id.button3);
         button = (Button)findViewById(R.id.button);
+        button3.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(HomePage.this,myinformation.class);
+                startActivity(intent);
+            }
+
+        });
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(HomePage.this, MainActivity2.class);

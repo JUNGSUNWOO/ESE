@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".myinformation"></activity>
+        <activity android:name=".myfighting_item"></activity>
+        <activity android:name=".myfighting" />
+        <activity android:name=".myinformation" />
         <activity android:name=".HomePage" />
         <activity
             android:name=".activity_loading"

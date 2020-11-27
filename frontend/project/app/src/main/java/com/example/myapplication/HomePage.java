@@ -25,7 +25,6 @@ public class HomePage extends AppCompatActivity {
                 Intent intent = new Intent(HomePage.this,myinformation.class);
                 startActivity(intent);
             }
-
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +37,15 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View v){
                 Intent intent = new Intent(HomePage.this, MainActivity2.class);
                 startActivity(intent);
+            }
+        });
+        btn_myinfo = (Button) findViewById(R.id.btn_myinfo);
+        btn_myinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, myinformation.class);
+                startActivity(intent);
+
             }
         });
     }

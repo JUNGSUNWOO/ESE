@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+<<<<<<< HEAD
         <activity android:name=".page_4"></activity>
         <activity android:name=".page_8" />
+=======
+
+        <activity android:name=".page_8"></activity>
+        <activity android:name=".myinformation"></activity>
+>>>>>>> b5f106e2d58a58c0fc6b38b584cc973523f21925
         <activity android:name=".HomePage" />
         <activity
             android:name=".activity_loading"

@@ -13,22 +13,33 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        Button btn_me;
-        Button btn_fri;
-        Button btn_myinfo;
-        btn_me = (Button) findViewById(R.id.btn_me);
-        btn_me.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, page_4.class);
+        Button button;
+        Button button3;
+        Button button2;
+        button3 = (Button)findViewById(R.id.button3);
+        button2 = (Button)findViewById(R.id.button2);
+        button = (Button)findViewById(R.id.button);
+        button3.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(HomePage.this,myinformation.class);
                 startActivity(intent);
             }
         });
-        btn_fri = (Button) findViewById(R.id.btn_fri);
-        btn_fri.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 Intent intent = new Intent(HomePage.this, page_4.class);
+=======
+                Intent intent = new Intent(HomePage.this,myfighting.class);
+                startActivity(intent);
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(HomePage.this, MainActivity2.class);
+>>>>>>> 195bbf74aef7f3dce21a4a4922950f2697380178
                 startActivity(intent);
             }
         });

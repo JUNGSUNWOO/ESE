@@ -13,9 +13,17 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        Button button;
-        button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
+        Button btn_me;
+        Button btn_fri;
+        btn_me = (Button)findViewById(R.id.btn_me);
+        btn_me.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(HomePage.this, page_4.class);
+                startActivity(intent);
+            }
+        });
+        btn_fri = (Button)findViewById(R.id.btn_fri);
+        btn_fri.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(HomePage.this, MainActivity2.class);
                 startActivity(intent);

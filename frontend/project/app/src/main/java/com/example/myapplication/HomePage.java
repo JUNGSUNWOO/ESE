@@ -29,28 +29,16 @@ public class HomePage extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
-                Intent intent = new Intent(HomePage.this, page_4.class);
-=======
                 Intent intent = new Intent(HomePage.this,myfighting.class);
                 startActivity(intent);
             }
         });
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(HomePage.this, MainActivity2.class);
->>>>>>> 195bbf74aef7f3dce21a4a4922950f2697380178
+                Intent intent = new Intent(HomePage.this, page_4.class);
                 startActivity(intent);
             }
         });
-        btn_myinfo = (Button) findViewById(R.id.btn_myinfo);
-        btn_myinfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, myinformation.class);
-                startActivity(intent);
 
-            }
-        });
     }
 }

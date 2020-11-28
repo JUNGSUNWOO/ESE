@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
+    <fragment
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lv_2"/>
+        android:layout_height="match_parent"
+        android:name="com.example.myapplication.page_4_Fragment2"/>
 
 </FrameLayout>

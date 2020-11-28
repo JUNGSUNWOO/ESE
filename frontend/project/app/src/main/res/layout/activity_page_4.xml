@@ -41,8 +41,10 @@
             android:layout_weight="1"
             android:text="3km" />
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>

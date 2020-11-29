@@ -45,6 +45,11 @@
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:layout="@layout/activity_page_4">
+    </FrameLayout>
+
+<!--    android:id="@+id/frame"-->
+
 
 </LinearLayout>

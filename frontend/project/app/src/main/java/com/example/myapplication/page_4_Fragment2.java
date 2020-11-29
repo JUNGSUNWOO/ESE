@@ -22,7 +22,7 @@ public class page_4_Fragment2 extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, LIST_MENU);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_single_choice, LIST_MENU);
         ListFragment ListFrag = (ListFragment)getFragmentManager().findFragmentById(R.id.frame);
         ListFrag.setListAdapter(adapter);
     }

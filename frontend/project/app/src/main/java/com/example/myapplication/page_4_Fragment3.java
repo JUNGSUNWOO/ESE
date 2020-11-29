@@ -13,16 +13,28 @@ import android.widget.ListView;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 
+class TEST_LIST{
+    String name;
+    String data;
+    public TEST_LIST(){}
+    public TEST_LIST(String n, String d){
+        this.name = n;
+        this.data = d;
+    }
+}
 public class page_4_Fragment3 extends ListFragment {
-    static final String[] LIST_MENU = {"서영준", "서영준","서영준", "서영준"};
+
+    static final TEST_LIST tl = new TEST_LIST("서영준", "5초");
+
     public page_4_Fragment3() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, LIST_MENU);
+        ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getContext(),R.layout.test2, (TEST_LIST<>) tl);
         ListFragment ListFrag = (ListFragment)getFragmentManager().findFragmentById(R.id.frame);
         ListFrag.setListAdapter(adapter);
     }

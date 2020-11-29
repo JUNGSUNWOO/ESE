@@ -1,33 +1,29 @@
 package com.example.myapplication;
 
-import android.app.Fragment;
 import android.app.ListFragment;
-import android.icu.text.ListFormatter;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
-
-import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
 public class page_4_Fragment1 extends ListFragment {
-    static final String[] LIST_MENU = {"정선우", "정선우","정선우", "정선우","정선우", "정선우"};
+    static final String[] LIST_MENU = {"정선우", "정선우", "정선우", "정선우", "정선우", "정선우"};
+
     public page_4_Fragment1() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, LIST_MENU);
-        ListFragment ListFrag = (ListFragment)getFragmentManager().findFragmentById(R.id.frame);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_multiple_choice, LIST_MENU);
+        ListFragment ListFrag = (ListFragment) getFragmentManager().findFragmentById(R.id.frame);
         ListFrag.setListAdapter(adapter);
     }
-//    @Nullable
+
+    //    @Nullable
 //    @Override
 //    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 //        View view = inflater.inflate(R.layout.page_4_fragment1, container, false);

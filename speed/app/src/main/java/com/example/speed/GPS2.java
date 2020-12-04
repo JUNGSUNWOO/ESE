@@ -13,6 +13,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -24,8 +26,10 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
 
     private LocationManager locationManager;
     private Location mLastLocation = null;
-    private TextView tvGetSpeed, tvCalSpeed,tvTime,tvLastTime,tvGpsEnable,tvTimeDif,tvDistDif;
+    private TextView tvGetSpeed, tvCalSpeed,tvTime,tvLastTime,tvGpsEnable,tvTimeDif,tvDistDif,tvSumTime;
     private double speed;
+    private Button btn, btn_end;
+    private long start,end,difference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,29 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
         tvGpsEnable = (TextView)findViewById(R.id.tvGPSEnabl);
         tvTimeDif = (TextView)findViewById(R.id.tvTimeDif);
         tvDistDif = (TextView)findViewById(R.id.tvDisDif);
+        tvSumTime = (TextView)findViewById(R.id.tvSumTime);
+        btn = (Button)findViewById(R.id.btn);
+        btn_end = (Button)findViewById(R.id.btn_end);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onStart();
+                onResume();
+                start = System.currentTimeMillis(); //시간측정 시작
+
+            }
+        });
+        btn_end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onPause();
+                end = System.currentTimeMillis(); //시간측정 끝
+                difference = (end - start)/1000; //계산
+
+                tvSumTime.setText(": " + difference); //계산 setText
+            }
+        });
 
         //권한 체크
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
@@ -65,7 +91,7 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
     public void onLocationChanged(@NonNull Location location) {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         double deltaTime = 0;
-        Log.d("tag", "3");
+        Log.d("Tag", "tlqkf3");
 
         //getSpeed()함수를 이용하여 속도를 계산
         double getSpeed = Double.parseDouble(String.format("%.3f", location.getSpeed()));
@@ -90,6 +116,8 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
         }
         //현재위치를 지난 위치로 변경
         mLastLocation = location;
+
+
     }
 
 

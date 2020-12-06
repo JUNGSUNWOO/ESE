@@ -44,17 +44,20 @@ public class page4_adapter extends BaseAdapter {
         }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.imageView1) ;
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.textView1) ;
-        TextView descTextView = (TextView) convertView.findViewById(R.id.textView2) ;
+
+        TextView maxspeedview = (TextView) convertView.findViewById(R.id.textView1) ;
+        TextView lowspeedview = (TextView) convertView.findViewById(R.id.textView2) ;
+        TextView avespeedview = (TextView) convertView.findViewById(R.id.textView3) ;
+        TextView timeview = (TextView) convertView.findViewById(R.id.textView4) ;
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
         page4_Item item = items.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        iconImageView.setImageDrawable(item.getIcon());
-        titleTextView.setText(item.getTitle());
-        descTextView.setText(item.getDesc());
+        maxspeedview.setText(item.getMax());
+        lowspeedview.setText(item.getLow());
+        avespeedview.setText(item.getAve());
+        timeview.setText(item.getTime());
         return convertView;
     }
 
@@ -71,12 +74,13 @@ public class page4_adapter extends BaseAdapter {
     }
 
     // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem(Drawable icon, String title, String desc) {
+    public void addItem(String max, String low, String ave, String time) {
         page4_Item item = new page4_Item();
 
-        item.setIcon(icon);
-        item.setTitle(title);
-        item.setDesc(desc);
+        item.setMax(max);
+        item.setLow(low);
+        item.setAve(ave);
+        item.setTime(time);
 
         items.add(item);
     }

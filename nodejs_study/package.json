@@ -1,0 +1,20 @@
+{
+  "name": "server_study",
+  "version": "1.0.0",
+  "description": "\"nodes studying\"",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "socket.io": "^3.0.3"
+  },
+  "repository": {
+    "private": true
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "hello world"
+  },
+  "author": "",
+  "license": "ISC"
+}

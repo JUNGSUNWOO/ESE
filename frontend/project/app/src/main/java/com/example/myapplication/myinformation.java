@@ -22,6 +22,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class myinformation extends AppCompatActivity {
 
@@ -32,7 +33,7 @@ public class myinformation extends AppCompatActivity {
         setContentView(R.layout.activity_myinformation);
 
         LV2 = (ListView)findViewById(R.id.list2);
-        new JSONTask().execute("http://192.168.0.6:3000/post");
+//        new JSONTask().execute("http://192.168.0.6:3000/post");
 
     }
     public class JSONTask extends AsyncTask<String, String, String> {
@@ -117,23 +118,23 @@ public class myinformation extends AppCompatActivity {
             String json = result;
             JSONObject jObj = null;
             try {
-                int i = 1;
                 jObj = new JSONObject(json);
 //                ArrayList<String> ar = new ArrayList<String>();
-                int end = jObj.length();
-                Log.d("tag", String.valueOf(end));
 
 //집어넣어줌 추후에 custom listview에서도 비슷하게 사용가능
                 myinformationAdapter adapter = new myinformationAdapter();
                 LV2.setAdapter(adapter);
-                while (true ) {
-//                    Log.d("jobj2", String.valueOf(ar));
-                    JSONObject jObj2 = (JSONObject) jObj.get(String.valueOf(i));
-                    adapter.addItem(new myinformation_item(String.valueOf(i), "1000m", (String) jObj2.get("id"), (String) jObj2.get("pw"), "7km/h"));
-//                    ar.add((String) jObj2.get("id"));
-//                    ar.add((String) jObj2.get("pw"));
-                    i++;
-                    if (i > end) break;
+                Iterator iter = jObj.keys();
+                ArrayList<String> key_list = new ArrayList<>();
+                while(iter.hasNext()){
+                    String key = iter.next().toString();
+                    key_list.add(key);
+                    Log.d("key", key);
+                }
+                for( String key :  key_list ) {
+                    // do whatever
+                    JSONObject jObj2 = (JSONObject) jObj.get(key);
+                    adapter.addItem(new myinformation_item(String.valueOf(jObj2.get("10maxspeed")), String.valueOf(jObj2.get("10lowspeed")), String.valueOf(jObj2.get("10avespeed")), String.valueOf(jObj2.get("10time")), "temp"));
                 }
                 adapter.notifyDataSetChanged();
 

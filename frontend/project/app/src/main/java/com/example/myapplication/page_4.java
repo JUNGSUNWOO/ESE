@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -13,7 +14,7 @@ public class page_4 extends AppCompatActivity {
     Button btn1, btn2, btn3;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_4);
 
@@ -51,3 +52,9 @@ public class page_4 extends AppCompatActivity {
 
     }
 }
+//                final android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//                page_4_Fragment3 fragment3 = new page_4_Fragment3();
+//
+//                page_4_Fragment3 customListFrgmt = (page_4_Fragment3) getSupportFragmentManager().findFragmentById(R.id.frame);
+//                customListFrgmt.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_foreground),
+//                        "New Box", "New Account Box Black 36dp") ;

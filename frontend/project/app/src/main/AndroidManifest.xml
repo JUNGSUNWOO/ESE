@@ -2,24 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
 
-        // zaqws manifest;
-        <activity android:name=".myfighting_item"></activity>
-        <activity android:name=".myfighting" />
+        <!--        //zaqws manifest;-->
         <activity android:name=".myinformation" />
+        <activity android:name=".myfighting" />
 
         <activity android:name=".page_4"></activity>
         <activity android:name=".page_8"></activity>
-        <activity android:name=".myinformation"></activity>
 
-        // JUNGSUNWOO manifest;
+        <!--        // JUNGSUNWOO manifest;-->
         <activity android:name=".HomePage" />
         <activity
             android:name=".activity_loading"

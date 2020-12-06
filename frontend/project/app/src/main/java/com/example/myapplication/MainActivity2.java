@@ -4,19 +4,21 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity2 extends AppCompatActivity {
-
+    private Button button4;
     private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,13 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         listView = (ListView) findViewById(R.id.listView);
+        button4 = (Button) findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity2.this, map_page_7.class);
+                startActivity(intent);
+            }
+        });
 
         SingerAdapter adapter = new SingerAdapter();
         listView.setAdapter(adapter);
@@ -33,6 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
         adapter.addItem(new SingerItem("소녀시대", "010-1020-1142"));
         adapter.addItem(new SingerItem("소녀시대", "010-1013-1022"));
         adapter.notifyDataSetChanged();
+
 
     }
 

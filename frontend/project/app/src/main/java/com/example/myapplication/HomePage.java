@@ -15,7 +15,9 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         Button button;
         Button button3;
+        Button button2;
         button3 = (Button)findViewById(R.id.button3);
+        button2 = (Button)findViewById(R.id.button2);
         button = (Button)findViewById(R.id.button);
         button3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)
@@ -23,12 +25,27 @@ public class HomePage extends AppCompatActivity {
                 Intent intent = new Intent(HomePage.this,myinformation.class);
                 startActivity(intent);
             }
-
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this,myfighting.class);
+                startActivity(intent);
+            }
         });
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(HomePage.this, MainActivity2.class);
                 startActivity(intent);
+            }
+        });
+        btn_myinfo = (Button) findViewById(R.id.btn_myinfo);
+        btn_myinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, myinformation.class);
+                startActivity(intent);
+
             }
         });
     }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myfighting">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="366dp"
+        android:layout_height="616dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="363dp"
+            android:layout_height="73dp"
+            android:layout_marginBottom="546dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="거리"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="최고속도"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tv_3"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="최저속도"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tv_4"
+                android:layout_width="76dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="평균속도"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tv_5"
+                android:layout_width="77dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="고스트"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+        <ListView
+            android:id="@+id/list3"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="0.0">
+
+        </ListView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

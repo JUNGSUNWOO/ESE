@@ -7,12 +7,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login_page);
 
         Intent intent = new Intent(this, activity_loading.class);
         startActivity(intent);
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         button = (Button)findViewById(R.id.btn_login);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, HomePage.class);
+                Intent intent = new Intent(LoginPage.this, HomePage.class);
                 startActivity(intent);
             }
         });

@@ -35,13 +35,6 @@ public class page_4_Fragment1 extends ListFragment {
     public page_4_Fragment1() {
     }
 
-    //    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_multiple_choice, LIST_MENU);
-//        ListFragment ListFrag = (ListFragment) getFragmentManager().findFragmentById(R.id.frame);
-//        ListFrag.setListAdapter(adapter);
-//    }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,13 +43,7 @@ public class page_4_Fragment1 extends ListFragment {
         page_4_Fragment1 fragment1 = (page_4_Fragment1) getFragmentManager().findFragmentById(R.id.frame);
         fragment1.setListAdapter(adapter);
         new JSONTask().execute("http://192.168.0.6:3000/post");
-        // 첫 번째 아이템 추가.
-        // 두 번째 아이템 추가.
-//        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//                "안드로이드", "재밌어");
-//        // 세 번째 아이템 추가.
-//        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//                "파이썬은", "더 재밌어");
+
         return super.onCreateView(inflater, container, savedInstanceState);
     }
     public class JSONTask extends AsyncTask<String, String, String> {
@@ -72,7 +59,6 @@ public class page_4_Fragment1 extends ListFragment {
                 BufferedWriter writer = null;
 
                 try {
-                    //URL url = new URL("http://192.168.0.4:3000/Users");
                     URL url = new URL(urls[0]);//url을 가져온다.
                     con = (HttpURLConnection) url.openConnection();
                     //추가된부분
@@ -175,9 +161,6 @@ public class page_4_Fragment1 extends ListFragment {
         String LowSpeed = item.getLow();
         String AveSpeed = item.getAve();
         String Time = item.getTime();
-//        String titleStr = item.getTitle();
-//        String descStr = item.getDesc();
-//        Drawable iconDrawable = item.getIcon();
 
         // TODO : use item data.
     }
@@ -186,22 +169,5 @@ public class page_4_Fragment1 extends ListFragment {
     public void addItem(String max, String low, String ave, String time) {
         adapter.addItem(max, low, ave, time);
     }
-
-
-    //    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.page_4_fragment1, container, false);
-//        lv_1 = (ListView) view.findViewById(R.id.lv_1);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(container.getContext(), android.R.layout.simple_list_item_1) ;
-//        adapter.add("정정선선우우");
-//        adapter.add("박박재재현현");
-//        adapter.add("서서영영준준");
-//        lv_1.setAdapter(adapter);
-//        adapter.notifyDataSetChanged();
-//        return inflater.inflate(R.layout.page_4_fragment2, container, false);
-//    }
-
-
 }
 

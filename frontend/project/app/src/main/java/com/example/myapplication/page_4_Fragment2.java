@@ -31,19 +31,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class page_4_Fragment2 extends ListFragment {
-    static final String[] LIST_MENU = {"박재현", "박재현", "박재현", "박재현"};
     page4_adapter adapter;
 
     public page_4_Fragment2() {
     }
 
-    //    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_single_choice, LIST_MENU);
-//        ListFragment ListFrag = (ListFragment)getFragmentManager().findFragmentById(R.id.frame);
-//        ListFrag.setListAdapter(adapter);
-//    }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,15 +45,6 @@ public class page_4_Fragment2 extends ListFragment {
         fragment2.setListAdapter(adapter);
         new JSONTask().execute("http://192.168.0.6:3000/post");
 
-        // 첫 번째 아이템 추가.
-//        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//                "정선우", "정선우");
-//        // 두 번째 아이템 추가.
-//        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//                "Circle", "Account Circle Black 36dp");
-//        // 세 번째 아이템 추가.
-//        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//                "Ind", "Assignment Ind Black 36dp");
         return super.onCreateView(inflater, container, savedInstanceState);
     }
     public class JSONTask extends AsyncTask<String, String, String> {
@@ -77,7 +60,6 @@ public class page_4_Fragment2 extends ListFragment {
                 BufferedWriter writer = null;
 
                 try {
-                    //URL url = new URL("http://192.168.0.4:3000/Users");
                     URL url = new URL(urls[0]);//url을 가져온다.
                     con = (HttpURLConnection) url.openConnection();
                     //추가된부분

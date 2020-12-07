@@ -29,19 +29,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class page_4_Fragment3 extends ListFragment {
-    static final String[] LIST_MENU = {"박재현", "박재현", "박재현", "박재현"};
     page4_adapter adapter;
 
     public page_4_Fragment3() {
     }
 
-    //    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_single_choice, LIST_MENU);
-//        ListFragment ListFrag = (ListFragment)getFragmentManager().findFragmentById(R.id.frame);
-//        ListFrag.setListAdapter(adapter);
-//    }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,7 +42,6 @@ public class page_4_Fragment3 extends ListFragment {
         page_4_Fragment3 fragment3 = (page_4_Fragment3) getFragmentManager().findFragmentById(R.id.frame);
         fragment3.setListAdapter(adapter);
 
-        //첫 번째 아이템 추가.
         new JSONTask().execute("http://192.168.0.6:3000/post");
 
         return super.onCreateView(inflater, container, savedInstanceState);
@@ -68,7 +59,6 @@ public class page_4_Fragment3 extends ListFragment {
                 BufferedWriter writer = null;
 
                 try {
-                    //URL url = new URL("http://192.168.0.4:3000/Users");
                     URL url = new URL(urls[0]);//url을 가져온다.
                     con = (HttpURLConnection) url.openConnection();
                     //추가된부분
@@ -78,7 +68,6 @@ public class page_4_Fragment3 extends ListFragment {
                     con.setRequestProperty("Accept", "text/html");//서버에 response 데이터를 html로 받음
                     con.setDoOutput(true);//Outstream으로 post 데이터를 넘겨주겠다는 의미
                     con.setDoInput(true);//Inputstream으로 서버로부터 응답을 받겠다는 의미
-                    //
                     con.connect();//연결 수행
 
                     //입력 스트림 생성
@@ -104,7 +93,6 @@ public class page_4_Fragment3 extends ListFragment {
                         buffer.append(line);
                     }
                     Log.d("buffer check", String.valueOf(buffer));
-                    //다 가져오면 String 형변환을 수행한다. 이유는 protected String doInBackground(String... urls) 니까
                     return buffer.toString();
                     //아래는 예외처리 부분이다.
                 } catch (IOException e) {
@@ -181,62 +169,3 @@ public class page_4_Fragment3 extends ListFragment {
     }
 
 }
-
-//public class page_4_Fragment3 extends ListFragment {
-//
-//    page4_adapter adapter ;
-//    page_4_Fragment3(){}
-//
-////    @Override
-////    public void onCreate(Bundle savedInstanceState) {
-////        super.onCreate(savedInstanceState);
-////        adapter = new page4_adapter();
-////        page_4_Fragment3 fragment3 = (page_4_Fragment3) getFragmentManager().findFragmentById(R.id.frame);
-////        fragment3.setListAdapter(adapter);
-////        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-////                "Box", "Account Box Black 36dp") ;
-////        // 두 번째 아이템 추가.
-////        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-////                "Circle", "Account Circle Black 36dp") ;
-////        // 세 번째 아이템 추가.
-////        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-////                "Ind", "Assignment Ind Black 36dp") ;
-////    }
-//@Override
-//public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-//                         Bundle savedInstanceState) {
-//    // Adapter 생성 및 Adapter 지정.
-//    adapter = new page4_adapter();
-//    page_4_Fragment3 fragment3 = (page_4_Fragment3) getFragmentManager().findFragmentById(R.id.frame);
-//    fragment3.setListAdapter(adapter);
-//
-//    // 첫 번째 아이템 추가.
-//    adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//            "정선우", "정선우");
-//    // 두 번째 아이템 추가.
-//    adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//            "임베디드", "언제하노");
-//    // 세 번째 아이템 추가.
-//    adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher_foreground),
-//            "딥러닝", "은 답도없다 ㅅㅂ");
-//    return super.onCreateView(inflater, container, savedInstanceState);
-//}
-//
-//    @Override
-//    public void onListItemClick(ListView l, @NonNull View v, int position, long id) {
-//        // get TextView's Text.
-//        page4_Item item = (page4_Item) l.getItemAtPosition(position);
-//
-//        String titleStr = item.getTitle();
-//        String descStr = item.getDesc();
-//        Drawable iconDrawable = item.getIcon();
-//
-//        // TODO : use item data.
-//    }
-//
-//    // ... 코드 계속
-//    public void addItem(Drawable icon, String title, String desc) {
-//        adapter.addItem(icon, title, desc);
-//    }
-//
-//}

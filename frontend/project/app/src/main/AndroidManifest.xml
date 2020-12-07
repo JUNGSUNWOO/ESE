@@ -6,28 +6,24 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication">
-
-        <!--        //zaqws manifest;-->
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Game_Page"></activity>
+        <!-- //zaqws manifest; -->
         <activity android:name=".myinformation" />
         <activity android:name=".myfighting" />
-
-        <activity android:name=".page_4"></activity>
-        <activity android:name=".page_8"></activity>
-
-        <!--        // JUNGSUNWOO manifest;-->
+        <activity android:name=".page_4" />
+        <activity android:name=".page_8" /> <!-- // JUNGSUNWOO manifest; -->
         <activity android:name=".HomePage" />
         <activity
             android:name=".activity_loading"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-        <activity android:name=".MainActivity2" />
         <activity android:name=".map_page_7" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

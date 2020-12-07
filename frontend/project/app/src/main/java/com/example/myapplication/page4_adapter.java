@@ -41,6 +41,7 @@ public class page4_adapter extends BaseAdapter {
         final int pos = position;
         Context context = parent.getContext();
 
+
         // "listview_item" Layout을 inflate하여 convertView 참조 획득.
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -53,7 +54,14 @@ public class page4_adapter extends BaseAdapter {
         TextView lowspeedview = (TextView) convertView.findViewById(R.id.textView2);
         TextView avespeedview = (TextView) convertView.findViewById(R.id.textView3);
         TextView timeview = (TextView) convertView.findViewById(R.id.textView4);
-
+        Button btn_ghost = (Button)convertView.findViewById(R.id.btn_ghost);
+        btn_ghost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), map_page_7.class);
+                v.getContext().startActivity(intent);
+            }
+        });
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
         page4_Item item = items.get(position);
 

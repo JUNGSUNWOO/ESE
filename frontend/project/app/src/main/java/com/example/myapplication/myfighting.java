@@ -29,23 +29,23 @@ public class myfighting extends AppCompatActivity {
         adapter.addItem(new myfighting_item("100m", "10km/h","5km/h","7km/h"));
         adapter.notifyDataSetChanged();
     }
-    class myfightingAdapter extends BaseAdapter {
+    class myfightingAdapter extends BaseAdapter { //adapter 클래스 구현
 
-        ArrayList<myfighting_item> items = new ArrayList<myfighting_item>();
+        ArrayList<myfighting_item> items = new ArrayList<myfighting_item>(); //구현해놓은 myfighting_item 데이터들 arrary리스트에 넣어주기
 
         @Override
         public int getCount() {
             return items.size();
-        }
+        } //아이템 사이즈
 
         public void addItem(myfighting_item item){
             items.add(item);
-        }
+        } //아이템 배열에 넣어주기
 
         @Override
         public Object getItem(int position) {
             return items.get(position);
-        }
+        } //아이템이 있는 위치 불러오기
 
         @Override
         public long getItemId(int position) {
@@ -53,10 +53,10 @@ public class myfighting extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) { //인터페이스 화면에 보여질 View 함수, 아이템의 위체 불러와서 보여주기
             myfighting_itemView view = new myfighting_itemView(getApplicationContext());
 
-            myfighting_item item2 = items.get(position);
+            myfighting_item item2 = items.get(position); //
             view.setA(item2.getDistance2());
             view.setB(item2.getBest_race2());
             view.setC(item2.getWorst_race2());

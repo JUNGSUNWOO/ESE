@@ -47,11 +47,11 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
         btn = (Button)findViewById(R.id.btn);
         btn_end = (Button)findViewById(R.id.btn_end);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() { //출발 버튼을 누르면 생기는 이벤트
             @Override
             public void onClick(View v) {
-                onStart();
-                onResume();
+                onStart(); //START 함수
+                onResume(); //Resume 함수
                 start = System.currentTimeMillis(); //시간측정 시작
 
             }
@@ -63,7 +63,7 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
                 end = System.currentTimeMillis(); //시간측정 끝
                 difference = (end - start)/1000; //계산
 
-                tvSumTime.setText(": " + difference); //계산 setText
+                tvSumTime.setText(": " + difference); //end 버튼을 누르면 계산결과 출력
             }
         });
 
@@ -71,19 +71,17 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             return;
         }
-        Log.d("Tag", "tlqkf");
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
         Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if(lastKnownLocation != null) {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-            String formatDate = sdf.format(new Date(lastKnownLocation.getTime()));
-            tvTime.setText(": " + formatDate); //Time
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss"); //시,분,초 형식으로 맞춰줌
+            String formatDate = sdf.format(new Date(lastKnownLocation.getTime())); //getTime으로 시간 불러와서 포맷 변수에 string 값으로 넣어주기
+            tvTime.setText(": " + formatDate); //Time 값 출력
         }
         //GPS 사용 가능 여부 확인
         boolean isEnable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         tvGpsEnable.setText(": " + isEnable); //GPS Enable
-        Log.d("Tag", "tlqkf2");
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1000,0,this);
     }
 
@@ -91,7 +89,6 @@ public class GPS2 extends AppCompatActivity implements LocationListener {
     public void onLocationChanged(@NonNull Location location) {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         double deltaTime = 0;
-        Log.d("Tag", "tlqkf3");
 
         //getSpeed()함수를 이용하여 속도를 계산
         double getSpeed = Double.parseDouble(String.format("%.3f", location.getSpeed()));

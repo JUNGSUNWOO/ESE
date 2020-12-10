@@ -8,6 +8,7 @@ public class page4_Item {
     private String lowspeed ;
     private String avespeed ;
     private String time;
+    private String id;
 
     public void setMax(String maxspeed) {
         this.maxspeed = maxspeed ;
@@ -21,7 +22,7 @@ public class page4_Item {
     public void setTime (String time) {
         this.time = time ;
     }
-
+    public void setId(String id){this.id = id;}
     public String getMax() {
         return this.maxspeed ;
     }
@@ -34,4 +35,5 @@ public class page4_Item {
     public String getTime() {
         return this.time ;
     }
+    public String getId(){return this.id;}
 }

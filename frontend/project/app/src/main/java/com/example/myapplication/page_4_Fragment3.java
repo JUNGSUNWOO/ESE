@@ -143,7 +143,7 @@ public class page_4_Fragment3 extends ListFragment {
                     // do whatever
                     JSONObject jObj2 = (JSONObject) jObj.get(key);
                     Log.d("jobh", String.valueOf(jObj2));
-                    adapter.addItem(String.valueOf(jObj2.get("30maxspeed")), String.valueOf(jObj2.get("30lowspeed")), String.valueOf(jObj2.get("30avespeed")), String.valueOf(jObj2.get("30time")));
+                    adapter.addItem(String.valueOf(jObj2.get("30maxspeed")), String.valueOf(jObj2.get("30lowspeed")), String.valueOf(jObj2.get("30avespeed")), String.valueOf(jObj2.get("30time")), String.valueOf(jObj2.get("id")));
                 }
                 adapter.notifyDataSetChanged();
 
@@ -166,8 +166,8 @@ public class page_4_Fragment3 extends ListFragment {
     }
 
     // ... 코드 계속
-    public void addItem(String max, String low, String ave, String time) {
-        adapter.addItem(max, low, ave, time);
+    public void addItem(String max, String low, String ave, String time, String id) {
+        adapter.addItem(max, low, ave, time, id);
     }
 
 }

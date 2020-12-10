@@ -144,7 +144,7 @@ public class page_4_Fragment1 extends ListFragment {
                     // do whatever
                     JSONObject jObj2 = (JSONObject) jObj.get(key);
                     Log.d("jobh", String.valueOf(jObj2));
-                    adapter.addItem(String.valueOf(jObj2.get("1maxspeed")), String.valueOf(jObj2.get("1lowspeed")), String.valueOf(jObj2.get("1avespeed")), String.valueOf(jObj2.get("1time")));
+                    adapter.addItem(String.valueOf(jObj2.get("1maxspeed")), String.valueOf(jObj2.get("1lowspeed")), String.valueOf(jObj2.get("1avespeed")), String.valueOf(jObj2.get("1time")), String.valueOf(jObj2.get("id")));
                 }
                 adapter.notifyDataSetChanged();
 
@@ -168,8 +168,8 @@ public class page_4_Fragment1 extends ListFragment {
         // TODO : use item data.
     }
 //add item
-    public void addItem(String max, String low, String ave, String time) {
-        adapter.addItem(max, low, ave, time);
+    public void addItem(String max, String low, String ave, String time, String id) {
+        adapter.addItem(max, low, ave, time, id);
     }
 }
 

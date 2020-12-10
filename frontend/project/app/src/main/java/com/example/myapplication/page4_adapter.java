@@ -54,6 +54,7 @@ public class page4_adapter extends BaseAdapter {
         TextView lowspeedview = (TextView) convertView.findViewById(R.id.textView2);
         TextView avespeedview = (TextView) convertView.findViewById(R.id.textView3);
         TextView timeview = (TextView) convertView.findViewById(R.id.textView4);
+        TextView idview = (TextView) convertView.findViewById(R.id.textView5);
         Button btn_ghost = (Button)convertView.findViewById(R.id.btn_ghost);
         btn_ghost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +71,7 @@ public class page4_adapter extends BaseAdapter {
         lowspeedview.setText(item.getLow());
         avespeedview.setText(item.getAve());
         timeview.setText(item.getTime());
+        idview.setText(item.getId());
         return convertView;
     }
 
@@ -86,14 +88,14 @@ public class page4_adapter extends BaseAdapter {
     }
 
     // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem(String max, String low, String ave, String time) {
+    public void addItem(String max, String low, String ave, String time, String id) {
         page4_Item item = new page4_Item();
 
         item.setMax(max);
         item.setLow(low);
         item.setAve(ave);
         item.setTime(time);
-
+        item.setId(id);
         items.add(item);
     }
 }

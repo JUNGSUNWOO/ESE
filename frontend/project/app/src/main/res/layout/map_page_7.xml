@@ -8,12 +8,12 @@
     android:orientation="vertical"
     tools:context=".LoginPage">
 
-    <TextClock
+    <TextView
         android:id="@+id/timer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:format12Hour="HH:mm:ss"
         android:gravity = "center"
+        android:text="00:03:45"
         android:textSize="75dp" />
 
     <RelativeLayout
@@ -78,21 +78,21 @@
             android:layout_width="100dp"
             android:gravity = "center"
             android:textSize="20dp"
-            android:text="test"
+            android:text="12.2km/h"
             android:layout_height="match_parent" />
         <TextView
             android:id="@+id/speed_2"
             android:layout_width="100dp"
             android:gravity = "center"
             android:textSize="20dp"
-            android:text="test"
+            android:text="8.7km/h"
             android:layout_height="match_parent" />
         <TextView
             android:id="@+id/speed_3"
             android:layout_width="100dp"
             android:textSize="20dp"
             android:gravity = "center"
-            android:text="test"
+            android:text="5.2km/h"
             android:layout_height="match_parent" />
 
     </GridLayout>

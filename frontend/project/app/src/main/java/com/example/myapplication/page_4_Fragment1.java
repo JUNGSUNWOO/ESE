@@ -42,7 +42,7 @@ public class page_4_Fragment1 extends ListFragment {
         adapter = new page4_adapter();
         page_4_Fragment1 fragment1 = (page_4_Fragment1) getFragmentManager().findFragmentById(R.id.frame);
         fragment1.setListAdapter(adapter);
-        new JSONTask().execute("http://192.168.0.6:3000/post");
+        new JSONTask().execute("http://192.168.0.6:3000/post"); //JSONTask 실행 메소드
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }
@@ -61,7 +61,6 @@ public class page_4_Fragment1 extends ListFragment {
                 try {
                     URL url = new URL(urls[0]);//url을 가져온다.
                     con = (HttpURLConnection) url.openConnection();
-                    //추가된부분
                     con.setRequestMethod("POST");
                     con.setRequestProperty("Cache-Control", "no-cache");//캐시 설정
                     con.setRequestProperty("Content-Type", "application/json");//application JSON 형식으로 전송
@@ -120,10 +119,12 @@ public class page_4_Fragment1 extends ListFragment {
             return null;
         }
 
-        //doInBackground메소드가 끝나면 여기로 와서 텍스트뷰의 값을 바꿔준다.
+        //doInBackground메소드가 끝나면 여기로 와서 리스트뷰의 값을 바꿔준다.
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
+            //위의 doinbackground메소드에서 return값을 받아와 jsonobject형으로 바꿔주고
+            //keys들을 불러와 list에 저장해준 뒤 저장된 key에 맞는 value값들로 list를 채워준다
             String json = result;
             JSONObject jObj_tmp = null;
             JSONObject jObj = null;
@@ -152,6 +153,8 @@ public class page_4_Fragment1 extends ListFragment {
             }
         }
     }
+    //아직 사용 하지 않는 메소드
+    //listvew event
     @Override
     public void onListItemClick(ListView l, @NonNull View v, int position, long id) {
         // get TextView's Text.
@@ -164,8 +167,7 @@ public class page_4_Fragment1 extends ListFragment {
 
         // TODO : use item data.
     }
-
-    // ... 코드 계속
+//add item
     public void addItem(String max, String low, String ave, String time) {
         adapter.addItem(max, low, ave, time);
     }

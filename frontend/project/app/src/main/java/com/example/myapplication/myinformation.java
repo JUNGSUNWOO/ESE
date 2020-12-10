@@ -36,6 +36,7 @@ public class myinformation extends AppCompatActivity {
 //        new JSONTask().execute("http://192.168.0.6:3000/post");
 
     }
+
     public class JSONTask extends AsyncTask<String, String, String> {
         @Override
         protected String doInBackground(String... urls) {

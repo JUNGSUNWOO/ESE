@@ -68,8 +68,8 @@ public class map_page_7 extends AppCompatActivity implements OnMapReadyCallback 
             try {
                 //JSONObject를 만들고 key value 형식으로 값을 저장해준다.
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.accumulate("speed", "아몰랑");
-                jsonObject.accumulate("time", "아몰랑");
+                jsonObject.accumulate("speed", "speed_1");
+                jsonObject.accumulate("time", "time_1");
                 HttpURLConnection con = null;
                 BufferedWriter writer = null;
 

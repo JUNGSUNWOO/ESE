@@ -47,6 +47,8 @@ public class page_4_Fragment2 extends ListFragment {
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }
+    //page_4_Fragment1 과 동일한 메소드를 사용하며 server에서 불러오는 data만 달라진다
+    //{100m. 1km. 3km}
     public class JSONTask extends AsyncTask<String, String, String> {
         @Override
         protected String doInBackground(String... urls) {

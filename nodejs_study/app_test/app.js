@@ -28,17 +28,34 @@ var users = {}
 //   name:"random"
 // })
 
+// db.query('SELECT * FROM 100mspeed', function (error, topics) {
+//   var i = 0;
+//   var container = {}
 
+//   while (true) {
+//     var tmp = {}
+//     // console.log(topics[i]['key_']);
+//     tmp['1maxspeed'] = topics[i]['1maxspeed'];
+//     tmp['1lowspeed'] = topics[i]['1lowspeed'];
+//     tmp['1avespeed'] = topics[i]['1avespeed'];
+//     tmp['1time'] = topics[i]['1time'];
+//     container[topics[i]['1speedkey']] = tmp;
+//     i++;
+//     if (topics[i] == null) break;
+//   }
+//   users["100m"] = container;
+// });
 // 기존코드에서 달라진 부분"""
 // db 접근해서 users dict에 (key,value)푸쉬해준다
 
-db.query('SELECT * FROM 100mspeed', function (error, topics) {
+//  SELECT * FROM 100mspeed LEFT JOIN login ON 100mspeed.1speedkey=login.key_
+db.query('SELECT * FROM 100mspeed LEFT JOIN login ON 100mspeed.1speedkey=login.key_', function (error, topics) {
   var i = 0;
   var container = {}
 
   while (true) {
     var tmp = {}
-    // console.log(topics[i]['key_']);
+    tmp['id'] = topics[i]['id'];
     tmp['1maxspeed'] = topics[i]['1maxspeed'];
     tmp['1lowspeed'] = topics[i]['1lowspeed'];
     tmp['1avespeed'] = topics[i]['1avespeed'];
@@ -46,35 +63,70 @@ db.query('SELECT * FROM 100mspeed', function (error, topics) {
     container[topics[i]['1speedkey']] = tmp;
     i++;
     if (topics[i] == null) break;
-  }
   users["100m"] = container;
+  }
 });
 
-db.query('SELECT * FROM 1000mspeed', function (error, topics) {
+// db.query('SELECT * FROM 1000mspeed', function (error, topics) {
+//   var i = 0;
+//   var container = {}
+
+//   while (true) {
+//     var tmp = {}
+//     // console.log(topics[i]['key_']);
+//     tmp['10maxspeed'] = topics[i]['10maxspeed'];
+//     tmp['10lowspeed'] = topics[i]['10lowspeed'];
+//     tmp['10avespeed'] = topics[i]['10avespeed'];
+//     tmp['10time'] = topics[i]['10time'];
+//     container[topics[i]['10speedkey']] = tmp;
+//     i++;
+//     if (topics[i] == null)  break;
+//   }
+//   users["1km"] = container;
+// });
+db.query('SELECT * FROM 1000mspeed LEFT JOIN login ON 1000mspeed.10speedkey=login.key_', function (error, topics) {
   var i = 0;
   var container = {}
 
   while (true) {
     var tmp = {}
-    // console.log(topics[i]['key_']);
+    tmp['id'] = topics[i]['id'];
     tmp['10maxspeed'] = topics[i]['10maxspeed'];
     tmp['10lowspeed'] = topics[i]['10lowspeed'];
     tmp['10avespeed'] = topics[i]['10avespeed'];
     tmp['10time'] = topics[i]['10time'];
     container[topics[i]['10speedkey']] = tmp;
     i++;
-    if (topics[i] == null)  break;
-  }
+    if (topics[i] == null) break;
   users["1km"] = container;
+  }
 });
 
-db.query('SELECT * FROM 3000mspeed', function (error, topics) {
+// db.query('SELECT * FROM 3000mspeed', function (error, topics) {
+//   var i = 0;
+//   var container = {}
+
+//   while (true) {
+//     var tmp = {}
+//     // console.log(topics[i]['key_']);
+//     tmp['30maxspeed'] = topics[i]['30maxspeed'];
+//     tmp['30lowspeed'] = topics[i]['30lowspeed'];
+//     tmp['30avespeed'] = topics[i]['30avespeed'];
+//     tmp['30time'] = topics[i]['30time'];
+//     container[topics[i]['30speedkey']] = tmp;
+//     i++;
+//     if (topics[i] == null) break;
+//   }
+//   users["3km"] = container;
+// });
+
+db.query('SELECT * FROM 3000mspeed LEFT JOIN login ON 3000mspeed.30speedkey=login.key_', function (error, topics) {
   var i = 0;
   var container = {}
 
   while (true) {
     var tmp = {}
-    // console.log(topics[i]['key_']);
+    tmp['id'] = topics[i]['id'];
     tmp['30maxspeed'] = topics[i]['30maxspeed'];
     tmp['30lowspeed'] = topics[i]['30lowspeed'];
     tmp['30avespeed'] = topics[i]['30avespeed'];
@@ -82,11 +134,29 @@ db.query('SELECT * FROM 3000mspeed', function (error, topics) {
     container[topics[i]['30speedkey']] = tmp;
     i++;
     if (topics[i] == null) break;
-  }
   users["3km"] = container;
-  console.log(users);
+  }
 });
 
+db.query('SELECT * FROM information', function (error, topics) {
+  var i = 0;
+  var container = {}
+
+  while (true) {
+    var tmp = {}
+    // console.log(topics[i]['key_']);
+    tmp['run_date'] = topics[i]['run_date'];
+    tmp['distance'] = topics[i]['distance'];
+    tmp['maxspeed'] = topics[i]['maxspeed'];
+    tmp['lowspeed'] = topics[i]['lowspeed'];
+    tmp['avespeed'] = topics[i]['avespeed'];
+    container[topics[i]['id_key']] = tmp;
+    i++;
+    if (topics[i] == null)  break;
+  }
+  users["information"] = container;
+    console.log(users);
+});
 // 기존코드에서 달라진 부분"""
 
 //get은 없어도됨

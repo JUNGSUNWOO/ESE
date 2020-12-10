@@ -42,7 +42,7 @@ public class page_4_Fragment1 extends ListFragment {
         adapter = new page4_adapter();
         page_4_Fragment1 fragment1 = (page_4_Fragment1) getFragmentManager().findFragmentById(R.id.frame);
         fragment1.setListAdapter(adapter);
-        new JSONTask().execute("http://192.168.0.6:3000/post"); //JSONTask 실행 메소드
+        new JSONTask().execute("http://192.168.0.2:3000/post"); //JSONTask 실행 메소드
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }

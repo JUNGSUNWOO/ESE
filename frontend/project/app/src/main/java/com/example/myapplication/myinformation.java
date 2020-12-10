@@ -33,7 +33,11 @@ public class myinformation extends AppCompatActivity {
         setContentView(R.layout.activity_myinformation);
 
         LV2 = (ListView)findViewById(R.id.list2);
+<<<<<<< HEAD
         new JSONTask().execute("http://192.168.0.6:3000/post");
+=======
+        new JSONTask().execute("http://192.168.0.2:3000/post");
+>>>>>>> 3bde693268876fc9544f194dedeff2723cb6937d
 
     }
 

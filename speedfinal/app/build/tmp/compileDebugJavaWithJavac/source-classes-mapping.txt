@@ -1,0 +1,6 @@
+com/example/speed/GPS2.java
+ com.example.speed.GPS2
+ com.example.speed.GPS2$1
+ com.example.speed.GPS2$2
+com/example/speed/BuildConfig.java
+ com.example.speed.BuildConfig

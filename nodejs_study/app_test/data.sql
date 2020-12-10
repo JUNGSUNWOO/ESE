@@ -37,6 +37,10 @@ INSERT INTO 100mspeed(1maxspeed, 1lowspeed, 1avespeed, 1time, 1speedkey) VALUES 
 INSERT INTO 100mspeed(1maxspeed, 1lowspeed, 1avespeed, 1time, 1speedkey) VALUES (13.2, 4.5, 8.4, 000058, 2);
 INSERT INTO 100mspeed(1maxspeed, 1lowspeed, 1avespeed, 1time, 1speedkey) VALUES (10.0, 3.4, 3.9, 000050, 3);
 ​
+SELECT 100mspeed.1maxspeed, 100mspeed.1lowspeed, 100mspeed.1avespeed, 100mspeed.1time,login.id
+FROM 100mspeed
+JOIN login
+ON login.key_ = 100mspeed.1speedkey;
 ​
 -- Table structure for table `1000mspeed`
 ​
@@ -81,8 +85,8 @@ INSERT INTO 3000mspeed(30maxspeed, 30lowspeed, 30avespeed, 30time, 30speedkey) V
 -- 기본키 안필요할 것 같은데 고민 해봐바(고민하고 이건 지우고)
 -- 일단 JaeHyun의 실시간 속도 테이블만 생성
 ​
-CREATE TABLE 'JHreal' (
-    'realspeed' float(10) not null
+CREATE TABLE JHreal (
+    realspeed float(10) not null
 );
 ​
 ​
@@ -92,3 +96,20 @@ INSERT INTO JHreal(realspeed) VALUES (3.0);
 INSERT INTO JHreal(realspeed) VALUES (5.0);
 INSERT INTO JHreal(realspeed) VALUES (7.0);
 INSERT INTO JHreal(realspeed) VALUES (6.0);
+<<<<<<< HEAD
+=======
+
+CREATE TABLE information (
+    run_date varchar(20) not null,
+    distance float(10) not null,
+    maxspeed float(10) not null,
+    lowspeed float(10) not null,
+    avespeed float(10) not null,
+    id_key int(10) not null,
+    primary key(id_key)
+);
+
+INSERT INTO information(run_date, distance, maxspeed, lowspeed, avespeed, id_key) VALUES("2020-12-11", 1000, 20.0,12.5,7.6, 1);
+INSERT INTO information(run_date, distance, maxspeed, lowspeed, avespeed, id_key) VALUES("2020-12-10", 1200, 22.0,12.5,7.6, 2);
+INSERT INTO information(run_date, distance, maxspeed, lowspeed, avespeed, id_key) VALUES("2020-12-09", 100, 25.0,12.5,7.6, 3);
+>>>>>>> 3bde693268876fc9544f194dedeff2723cb6937d

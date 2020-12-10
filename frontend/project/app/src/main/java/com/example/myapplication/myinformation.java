@@ -33,7 +33,7 @@ public class myinformation extends AppCompatActivity {
         setContentView(R.layout.activity_myinformation);
 
         LV2 = (ListView)findViewById(R.id.list2);
-//        new JSONTask().execute("http://192.168.0.6:3000/post");
+        new JSONTask().execute("http://192.168.0.2:3000/post");
 
     }
 
@@ -117,10 +117,12 @@ public class myinformation extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             String json = result;
+            JSONObject jObj_tmp = null;
             JSONObject jObj = null;
             try {
-                jObj = new JSONObject(json);
-//                ArrayList<String> ar = new ArrayList<String>();
+                jObj_tmp = new JSONObject(json);
+                jObj = (JSONObject) jObj_tmp.get("information");
+                Log.d("jobh", String.valueOf(jObj));
 
 //집어넣어줌 추후에 custom listview에서도 비슷하게 사용가능
                 myinformationAdapter adapter = new myinformationAdapter();
@@ -135,7 +137,7 @@ public class myinformation extends AppCompatActivity {
                 for( String key :  key_list ) {
                     // do whatever
                     JSONObject jObj2 = (JSONObject) jObj.get(key);
-                    adapter.addItem(new myinformation_item(String.valueOf(jObj2.get("10maxspeed")), String.valueOf(jObj2.get("10lowspeed")), String.valueOf(jObj2.get("10avespeed")), String.valueOf(jObj2.get("10time")), "temp"));
+                    adapter.addItem(new myinformation_item(String.valueOf(jObj2.get("run_date")), String.valueOf(jObj2.get("distance")), String.valueOf(jObj2.get("maxspeed")), String.valueOf(jObj2.get("lowspeed")), String.valueOf(jObj2.get("avespeed"))));
                 }
                 adapter.notifyDataSetChanged();
 

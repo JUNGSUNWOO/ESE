@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="50dp"
+    android:layout_margin="5dp"
     android:orientation="vertical"
     tools:context=".page_4">
 
@@ -49,25 +49,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="최고속도"
+            android:text="MAX"
             android:layout_weight="0.5"
             android:gravity="center"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="최저속도"
+            android:text="LOW"
             android:layout_weight="0.5"
             android:gravity="center"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="평균속도"
+            android:text="AVE"
             android:gravity="center"
             android:layout_weight="0.5"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="러닝시간"
+            android:text="Time"
+            android:gravity="center"
+            android:layout_weight="0.5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
             android:gravity="center"
             android:layout_weight="0.5"/>
         <TextView

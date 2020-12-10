@@ -7,11 +7,12 @@
     tools:context=".page_8"
     android:layout_margin="40dp"
     android:orientation="vertical">
-    <TextClock
+
+    <TextView
         android:id="@+id/timer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:format12Hour="HH:mm:ss"
+        android:text="00:03:45"
         android:gravity = "center"
         android:textSize="75dp" />
 
@@ -55,21 +56,21 @@
         android:layout_width="100dp"
         android:gravity = "center"
         android:textSize="20dp"
-        android:text="test"
+        android:text="12.4km/h"
         android:layout_height="match_parent" />
     <TextView
         android:id="@+id/speed_2"
         android:layout_width="100dp"
         android:gravity = "center"
         android:textSize="20dp"
-        android:text="test"
+        android:text="8.3km/h"
         android:layout_height="match_parent" />
     <TextView
         android:id="@+id/speed_3"
         android:layout_width="100dp"
         android:textSize="20dp"
         android:gravity = "center"
-        android:text="test"
+        android:text="6.3km/h"
         android:layout_height="match_parent" />
     </GridLayout>
 
@@ -80,11 +81,11 @@
         android:gravity="center"
         android:layout_marginTop="40dp"
         android:textSize="25dp"/>
-    <TextClock
+    <TextView
         android:id="@+id/timer_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:format12Hour="HH:mm:ss"
+        android:text="00:04:12"
         android:gravity = "center"
         android:textSize="75dp" />
 
@@ -128,21 +129,21 @@
             android:layout_width="100dp"
             android:gravity = "center"
             android:textSize="20dp"
-            android:text="test"
+            android:text="11.8km/h"
             android:layout_height="match_parent" />
         <TextView
             android:id="@+id/speed_2_1"
             android:layout_width="100dp"
             android:gravity = "center"
             android:textSize="20dp"
-            android:text="test"
+            android:text="6.6km/h"
             android:layout_height="match_parent" />
         <TextView
             android:id="@+id/speed_3_1"
             android:layout_width="100dp"
             android:textSize="20dp"
             android:gravity = "center"
-            android:text="test"
+            android:text="4.2km/h"
             android:layout_height="match_parent" />
     </GridLayout>
 

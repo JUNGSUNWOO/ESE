@@ -38,35 +38,40 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="날짜"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:layout_weight="2"/>
 
             <TextView
                 android:layout_width="66dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="거리"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:layout_weight="1"/>
 
             <TextView
                 android:layout_width="66dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="최고속도"
-                android:textSize="17dp" />
+                android:textSize="17dp"
+                android:layout_weight="1"/>
 
             <TextView
                 android:layout_width="66dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="최저속도"
-                android:textSize="17dp" />
+                android:textSize="17dp"
+                android:layout_weight="1"/>
 
             <TextView
                 android:layout_width="66dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="평균속도"
-                android:textSize="17dp" />
+                android:textSize="17dp"
+                android:layout_weight="1"/>
 
 
         </LinearLayout>

@@ -43,7 +43,7 @@ public class page_4_Fragment2 extends ListFragment {
         adapter = new page4_adapter();
         page_4_Fragment2 fragment2 = (page_4_Fragment2) getFragmentManager().findFragmentById(R.id.frame);
         fragment2.setListAdapter(adapter);
-        new JSONTask().execute("http://192.168.0.6:3000/post");
+        new JSONTask().execute("http://192.168.0.2:3000/post");
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }
@@ -146,7 +146,7 @@ public class page_4_Fragment2 extends ListFragment {
                     // do whatever
                     JSONObject jObj2 = (JSONObject) jObj.get(key);
                     Log.d("jobh", String.valueOf(jObj2));
-                    adapter.addItem(String.valueOf(jObj2.get("10maxspeed")), String.valueOf(jObj2.get("10lowspeed")), String.valueOf(jObj2.get("10avespeed")), String.valueOf(jObj2.get("10time")));
+                    adapter.addItem(String.valueOf(jObj2.get("10maxspeed")), String.valueOf(jObj2.get("10lowspeed")), String.valueOf(jObj2.get("10avespeed")), String.valueOf(jObj2.get("10time")), String.valueOf(jObj2.get("id")));
                 }
                 adapter.notifyDataSetChanged();
 
@@ -164,13 +164,14 @@ public class page_4_Fragment2 extends ListFragment {
         String LowSpeed = item.getLow();
         String AveSpeed = item.getAve();
         String Time = item.getTime();
+        String Id = item.getId();
 
         // TODO : use item data.
     }
 
     // ... 코드 계속
-    public void addItem(String max, String low, String ave, String time) {
-        adapter.addItem(max, low, ave, time);
+    public void addItem(String max, String low, String ave, String time, String id) {
+        adapter.addItem(max, low, ave, time, id);
     }
 
 }

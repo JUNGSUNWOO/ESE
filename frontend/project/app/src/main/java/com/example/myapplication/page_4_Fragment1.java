@@ -31,6 +31,7 @@ import java.util.Iterator;
 
 public class page_4_Fragment1 extends ListFragment {
     private page4_adapter adapter;
+    String per_url = public_url.getInstance().getPer_url();
 
     public page_4_Fragment1() {
     }
@@ -42,7 +43,8 @@ public class page_4_Fragment1 extends ListFragment {
         adapter = new page4_adapter();
         page_4_Fragment1 fragment1 = (page_4_Fragment1) getFragmentManager().findFragmentById(R.id.frame);
         fragment1.setListAdapter(adapter);
-        new JSONTask().execute("http://192.168.0.2:3000/post"); //JSONTask 실행 메소드
+        Log.d("url", per_url);
+        new JSONTask().execute(per_url); //JSONTask 실행 메소드
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }

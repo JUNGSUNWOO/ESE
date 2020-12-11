@@ -16,7 +16,7 @@ public class LoginPage extends AppCompatActivity {
 
         Intent intent = new Intent(this, activity_loading.class);
         startActivity(intent);
-
+        public_url.getInstance().setPer_url("http://192.168.0.6:3000/post");
         Button button;
         button = (Button)findViewById(R.id.btn_login);
         button.setOnClickListener(new View.OnClickListener(){

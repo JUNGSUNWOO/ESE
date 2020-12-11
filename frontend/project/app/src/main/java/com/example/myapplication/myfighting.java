@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class myfighting extends AppCompatActivity {
+    String per_url = public_url.getInstance().getPer_url();
 
     private ListView LV3;
     @Override
@@ -36,11 +37,8 @@ public class myfighting extends AppCompatActivity {
         setContentView(R.layout.activity_myfighting);
 
         LV3 = (ListView)findViewById(R.id.list3);
-<<<<<<< HEAD
-        new myfighting.JSONTask().execute("http://192.168.0.6:3000/post");
-=======
-        new myfighting.JSONTask().execute("http://192.168.0.2:3000/post");
->>>>>>> 3bde693268876fc9544f194dedeff2723cb6937d
+        new myfighting.JSONTask().execute(per_url);
+
 
     }
     public class JSONTask extends AsyncTask<String, String, String> {

@@ -8,7 +8,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '257848',
+  password: '0924',
   database: 'running_app',
   multipleStatements : true
 });

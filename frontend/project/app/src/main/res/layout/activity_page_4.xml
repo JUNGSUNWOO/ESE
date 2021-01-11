@@ -41,6 +41,45 @@
             android:layout_weight="1"
             android:text="3km" />
     </LinearLayout>
+<<<<<<< HEAD
+=======
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="최고속도"
+            android:layout_weight="0.5"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="최저속도"
+            android:layout_weight="0.5"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="평균속도"
+            android:gravity="center"
+            android:layout_weight="0.5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="러닝시간"
+            android:gravity="center"
+            android:layout_weight="0.5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="고스트"
+            android:gravity="center"
+            android:layout_weight="2"/>
+    </LinearLayout>
+>>>>>>> origin/zaqws4894
 
     <FrameLayout
         android:id="@+id/frame"

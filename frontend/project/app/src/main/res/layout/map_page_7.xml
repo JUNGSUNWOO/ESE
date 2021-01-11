@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="40dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LoginPage">
 
     <TextClock
         android:id="@+id/timer"

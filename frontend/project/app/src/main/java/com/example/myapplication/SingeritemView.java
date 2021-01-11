@@ -15,8 +15,6 @@ public class SingeritemView extends LinearLayout {
     TextView textView;
     TextView textView2;
 
-
-
     public SingeritemView(Context context) {
         super(context);
         init(context);

@@ -72,7 +72,6 @@ public class MainActivity2 extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             SingeritemView view = new SingeritemView(getApplicationContext());
-
             SingerItem item = items.get(position);
             view.setName(item.getName());
             view.setMobile(item.getMobile());
